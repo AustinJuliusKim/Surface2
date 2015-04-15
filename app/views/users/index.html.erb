@@ -1,0 +1,43 @@
+<div class="jumbotron">
+	<h1> Check Out Other Users!</h1>
+	<p class="lead">See what other users are saying!</p>
+	<%= link_to "Join now!", new_user_path, class: "btn btn-primary" %>
+</div>
+<div class="container-fluid">
+	<div class="row">
+	
+		<div class="col-md-4">
+			<blockquote class="well">
+				 <p>You are the Rails beneath by Ruby</p>
+				 <footer>Mikel Pacheco</footer>
+			</blockquote>
+		</div>
+
+		<div class="col-md-4">
+			<blockquote class="well">
+				 <p>After 5:30 pm on Friday, I just want to talk about life</p>
+				 <footer>Jimmy Garson</footer>
+			</blockquote>
+		</div>
+
+		<div class="col-md-4">
+			<blockquote class="well">
+				 <p>Circle puppy!</p>
+				 <footer>Glenn Harris</footer>
+			</blockquote>
+		</div>
+	</div>
+
+
+<ul class="list-unstyled">
+
+	<% @users.each do |user| %>
+		<li class="well-sm">
+			<strong> <%= user.username %> </strong> - <%= user.age %> years old - <%= user.gender %> looking for <%= user.looking_for %> 
+			<%= link_to "More info", user_path(user), class: "btn btn-info" %>
+		</li>
+	<% end %>
+</ul>
+
+
+</div>
