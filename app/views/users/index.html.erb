@@ -1,6 +1,8 @@
 <div class="jumbotron">
 	<h1> Check Out Other Users!</h1>
+
 	<p class="lead">See what other users are saying!</p>
+	
 	<%= link_to "Join now!", new_user_path, class: "btn btn-primary" %>
 </div>
 <div class="container-fluid">
@@ -8,7 +10,7 @@
 	
 		<div class="col-md-4">
 			<blockquote class="well">
-				 <p>You are the Rails beneath by Ruby</p>
+				 <p>You are the Rails beneath my Ruby</p>
 				 <footer>Mikel Pacheco</footer>
 			</blockquote>
 		</div>
@@ -28,14 +30,15 @@
 		</div>
 	</div>
 
-
 <ul class="list-unstyled">
 
 	<% @users.each do |user| %>
-		<li class="well-sm">
-			<strong> <%= user.username %> </strong> - <%= user.age %> years old - <%= user.gender %> looking for <%= user.looking_for %> 
-			<%= link_to "More info", user_path(user), class: "btn btn-info" %>
-		</li>
+	
+			<li class="well-sm">
+				<strong> <%= user.username %> </strong> - <%= user.age %> years old - <%= user.gender %> looking for <%= user.looking_for %> 
+				<%= link_to "More info", user_path(user), class: "btn btn-info" %>
+			</li>
+		
 	<% end %>
 </ul>
 

@@ -1,10 +1,42 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
-<img class="img-circle" style="float: left; max-width: 200px; max-height: 200px" src="http://fillmurray.com/200/200">
+<div class="jumbotron">
+	<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+	<img class="img-circle" style="float: left; max-width: 200px; max-height: 200px" src="http://fillmurray.com/200/200">
+
+	
+		<h3><%= @user.gender %>, <%= @user.age %> years old, looking for <%= @user.looking_for %></h3>
 
 
-	<h3><%= @user.gender %>, <%= @user.age %> years old, looking for <%= @user.looking_for %></h3>
+	<%= link_to "Edit this user!", edit_user_path(@user), class: "btn btn-warning" %>
+	<%= link_to "Back to the list!", users_path, class: "btn btn-info" %>
+	<%= link_to "Delete this user!", user_path, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?"} %>
+</div>
+<div class="container">
+	<div class="row">
+		<section>
+			<h2>Statuses</h2>
+			<% @user.statuses.each do |status| %>
+				<div class="col-md-4">
 
-
-<%= link_to "Edit this user!", edit_user_path(@user), class: "btn btn-warning" %>
-<%= link_to "Back to the list!", users_path, class: "btn btn-info" %>
-<%= link_to "Delete this user!", user_path, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?"} %>
+					<h3>#status<%= @user.statuses.index(status) +1 %></h3>
+					<p><strong><%= status.body %></strong> </p>
+				</div>
+			<% end %>	
+		</section>
+	</div>
+	<br>
+	<div class="row">
+		<section>
+			<h2>Add a new status!</h2>
+			<%= form_for [@user, @status] do |f| %>
+				<div>
+			
+					<%= f.label :body, "Status" %>
+					<%= f.text_area :body, class: "form-control" %>
+				
+				</div>
+				<br>
+				<%= f.submit "Add your status!", class: "btn btn-primary" %>
+			<% end %>
+		</section>
+	</div>
+</div>

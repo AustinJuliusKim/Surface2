@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete "users/:id" => "users#destroy"
   get "users/:id" => "users#show", as: :user
   get "users/:id/edit" => "users#edit", as: :edit_user
+  post "users/:id/statuses" => "statuses#create", as: :user_statuses
 
 
 
