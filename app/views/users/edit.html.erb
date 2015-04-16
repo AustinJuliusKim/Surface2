@@ -3,10 +3,9 @@
 		<h1>Edit this profile!</h1>
 	</div>
 	<hr>
-	<div class="container-fluid">
-		<%= form_for @user do |f| %>
-		<div class="col-md-3">
-			<form class="form-horizontal">
+	
+		<div class="row col-sm-3">
+		<%= form_for @user, class: "form-horizontal" do |f| %>
 		
 			<div class="form-group">
 				<%= f.label :username %>
@@ -53,9 +52,8 @@
 			<div class="form-group">
 				<%= link_to "Back to the list!", users_path, class: "btn btn-default" %>
 			</div>
-		</form>
+	
 		<% end %>
-
-	</div>
+	
 	</div>
 </div>

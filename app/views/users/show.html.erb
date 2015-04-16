@@ -1,4 +1,4 @@
-<div class="container">
+<div class="jumbotron">
 	<h1><%= @user.first_name %> <%= @user.last_name %></h1>
 	<img class="img-circle" style="float: left; max-width: 200px; max-height: 200px" src="http://fillmurray.com/200/200">
 
@@ -15,7 +15,7 @@
 		<section>
 			<h2>Statuses</h2>
 			<% @user.statuses.each do |status| %>
-				<div class="col-md-3 col-md-offset-1">
+				<div class="col-md-4">
 
 					<h3>#status<%= @user.statuses.index(status) +1 %></h3>
 					<p><strong><%= status.body %></strong> </p>
