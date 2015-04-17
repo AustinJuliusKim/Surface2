@@ -1,6 +1,7 @@
 <div class="jumbotron">
 	<h1>Join Surface Today</h1>
 	<p class="lead">and Start Connecting Immediately!</p>
+	<%#= link_to "Log in!" class: "btn btn-success"  %>
 </div>
 
 <div class="container">
@@ -13,8 +14,8 @@
 			</div>
 
 			<div class="form-group">
-				<%= f.label :password %>
-				<%= f.text_field :password, class: "form-control" %>
+				<%= f.label :password_digest, "Password" %>
+				<%= f.password_field :password_digest, class: "form-control" %>
 			</div>
 
 			<div class="form-group">
@@ -53,8 +54,9 @@
 		 	<div class="form-group">
 				<%= link_to "Back to the list!", users_path, class: "btn btn-default" %>
 			</div>
+			<% end %>
 		</form>
-		<% end %>
+	
 	<br>
 	</div>
 </div>
