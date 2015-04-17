@@ -1,0 +1,20 @@
+<div class="container">
+<div class="jumbotron">
+	<h1>Log In!</h1>
+</div>
+	<div class="row">
+	<%= form_for :login do |f| %>
+		<div class="class">
+			<%= f.label :username %>
+			<%= f.text_field :username %>
+		</div>
+		<div class="class">
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+		</div>
+		<div>
+			<%= f.submit 'Log In'  %>
+		</div>
+		<% end %>
+	</div>
+</div>

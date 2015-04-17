@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   post "users/:id/statuses" => "statuses#create", as: :user_statuses
 
 
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
+
+
 
 
 
