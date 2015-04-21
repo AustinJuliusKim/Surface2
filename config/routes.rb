@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
 
-  get"users/" => "users#index"
+  get "users/" => "users#index"
   get "signup" => "users#new", as: :new_user
   get"users/:id" => "users#show", as: :user
   get "users/:id/edit" => "users#edit", as: :edit_user
   post "users/" => "users#create"
   patch "users/:id" => "users#update"
   delete "users/:id" => "users#destroy"
-  # Routes dedictaed to encription
+  # Routes dedictaed to encryption
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
-
-
+  # Routes dedicated to status
+ post "users/:id/statuses" => "statuses#create", as: :user_statuses
 
 
 
