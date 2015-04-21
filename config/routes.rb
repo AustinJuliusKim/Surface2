@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
   # Routes dedicated to status
- post "users/:id/statuses" => "statuses#create", as: :user_statuses
+  post "users/:id/statuses" => "statuses#create", as: :user_statuses
 
 
 
