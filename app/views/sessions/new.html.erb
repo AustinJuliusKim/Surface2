@@ -2,6 +2,8 @@
 <div class="jumbotron">
 	<h1>Log In!</h1>
 </div>
+	
+
 	<div class="row">
 	<%= form_for :login do |f| %>
 		<div class="class">
@@ -12,15 +14,18 @@
 			<%= f.label :password %>
 			<%= f.password_field :password %>
 		</div>
+		<br>
 		<div>
-			<%= f.submit 'Log In' %>
-		</div>
-		<div>
-			<%= link_to "Join Now", new_user_path, class: "btn btn-info" %>
-		</div>
-		<div>
-			<%= link_to "Back to List", users_path, class: "btn btn-info" %>
-		</div>
+			<span>
+				<%= f.submit 'Log In', class: "btn btn-submit" %>
+			</span>
+			<span>
+				<%= link_to "Join Now", new_user_path, class: "btn btn-info" %>
+			</span>
+			<span>
+				<%= link_to "Back to List", users_path, class: "btn btn-primary" %>
+			</span>
+		</div> 
 		<% end %>
 	</div>
 </div>

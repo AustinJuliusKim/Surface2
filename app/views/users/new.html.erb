@@ -1,3 +1,4 @@
+<div class="container">
 <div class="jumbotron">
 	<h1>Join Surface Today</h1>
 	<p class="lead">and Start Connecting Immediately!</p>
@@ -5,7 +6,24 @@
 	<%#= link_to "Log in!" class: "btn btn-success"  %>
 </div>
 
-<div class="container">
+<% if @user.errors.any? %>
+<div>
+	<h4 class="text-danger">
+	 	<%= pluralize(@user.errors.count, "error")  %>
+	 </h4>
+	 <ul class="list-group-item list-group-item-danger">
+		<% @user.errors.full_messages.each do |msg| %>
+		<li class= "list-group-item list-group-item-danger">
+			<%= msg.downcase  %>
+		</li>
+		<% end %>
+	 </ul>
+</div>
+<% end %>
+<br>
+
+
+
 	<div class="col-md-3 col-md-offset-1">
 		
 			<%= form_for @user do |f| %>
@@ -17,6 +35,11 @@
 			<div class="form-group">
 				<%= f.label :password, "Password" %>
 				<%= f.password_field :password, class: "form-control" %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :password_confirmation, "Password" %>
+				<%= f.password_field :password_confirmation, class: "form-control" %>
 			</div>
 
 			<div class="form-group">
