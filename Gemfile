@@ -29,8 +29,9 @@ gem 'better_errors', group: :development
 
 gem 'binding_of_caller', group: :development
 
+gem 'quiet_assets'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
