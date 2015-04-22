@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
     			session[:user_id] = user.id.to_s
    			redirect_to users_path
   		else
-    		redirect_to login_path
+  			flash.now[:error] = "The email or password you provided does not match our records"	
+    			render :new
   		end
 	end
 	

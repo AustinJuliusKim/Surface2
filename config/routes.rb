@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root "users#index"
   get "users/" => "users#index"
   get "signup" => "users#new", as: :new_user
   get"users/:id" => "users#show", as: :user
