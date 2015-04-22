@@ -38,6 +38,7 @@
 		
 		 	<div class="col-md-4">
 			<li class="well-sm">
+				<%= image_tag user.image.url, class: "img-circle" %>
 				<strong> <%= user.username %> </strong> - <%= user.age %> years old - <%= user.gender %> looking for <%= user.looking_for %> 
 				<%= link_to "More info", user_path(user), class: "btn btn-info" %>
 			</li>

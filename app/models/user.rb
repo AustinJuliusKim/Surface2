@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :statuses
       before_save :format_user_input
+      mount_uploader :image, AvatarUploader
 
 	attr_reader :password
 
