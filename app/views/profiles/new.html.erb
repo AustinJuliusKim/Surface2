@@ -1,0 +1,36 @@
+<div>
+	<section>
+		<%= form_for @profile do |f| %>
+			<div>
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name  %>
+			</div>
+
+			<div>
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name  %>
+			</div>
+
+			<div>
+				<%= f.label :age %>
+				<%= f.number_field :age  %>
+			</div>
+
+			<div>
+				<%= f.label :gender %>
+				<%= f.text_field :gender  %>
+			</div>
+
+			<div>
+				<%= f.label :looking_for %>
+				<%= f.text_field :looking_for  %>
+			</div>
+
+			<div>
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name  %>
+			</div>
+
+		<% end %>
+	</section>
+</div>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   delete "/logout" => "sessions#destroy"
   # Routes dedicated to status
   post "users/:id/statuses" => "statuses#create", as: :user_statuses
-
+  # Routes dedicated to profile
 
 
 
